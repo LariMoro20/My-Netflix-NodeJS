@@ -1,0 +1,108 @@
+<% include partials/header.ejs %>
+<div class="container space-top">
+    <div class="row ">
+      
+
+        
+<div class="col-md-12">
+    <h3>Filmes</h3>
+                <a class="btn addbtn text-right" href="/admin/add-filme">Adicionar Filme</a>
+
+    <table>
+        <thead>
+          <tr>
+            <th>Imagem</th>
+            <th>Titulo</th>
+            <th>Genero</th>
+            <th>Descrição</th>
+            <th>Destaque</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+            <th>Interações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (let mov of movies) {
+            let des="Não";
+            if( mov.Mdestaque==1){
+               des="Sim";
+            }else{
+               des="Não";
+            }
+            %>
+            <tr>
+            <td><img src="<%= mov.Mimage %>" width="50px"/></td>
+            <td><%= mov.Mname %></td>
+            <td><%= mov.Mgenre %></td>
+            <td><%= mov.Mdescription %></td>
+            <td><button class="destak" idm="<%= mov.Id %>" dest="<%= mov.Mdestaque %>"><%= des %></button></td>
+            <td><a href="/admin/editar-filme/<%= mov.Id %>">EDITAR</a></td>
+            <td><a href="/admin/excluirFilme/<%= mov.Id %>">X</a></td>
+            <td><a href="/admin/interacoes/<%= mov.Id %>">VER</a></td>
+          </tr>
+          <% } %>
+        </tbody>
+      
+      </table> 
+    
+    </div>
+
+
+
+    <div class="col-md-12" style="margin-top: 20px;">
+      <h3>Séries</h3>
+      <a class="btn addbtn text-right" href="/admin/add-serie">Adicionar Serie</a>
+
+        <table>
+            <thead>
+              <tr>
+                  <th>Imagem</th>
+            <th>Titulo</th>
+            <th>Genero</th>
+            <th>Descrição</th>
+            <th>Destaque</th>
+
+            <th>Editar</th>
+            <th>Excluir</th>
+            <th>Interações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for (let mov of series) { 
+                let des="Não";
+                if( mov.Sdestaque==1){
+                   des="Sim";
+                }else{
+                   des="Não";
+                }
+                
+                
+                %>
+                <tr>
+                <td><img src="<%= mov.Simage %>" width="50px"/></td>
+                <td><%= mov.Titulo %></td>
+                <td><%= mov.Sgenre %></td>
+                <td><%= mov.Description %></td>
+                <td><button class="destakserie" ids="<%= mov.Id %>" dest="<%= mov.Sdestaque %>"><%= des %></button></td>
+
+                <td><a href="/admin/editar-serie/<%= mov.Id %>">EDITAR</a></td>
+                <td><a href="/admin/excluirSerie/<%= mov.Id %>">X</a></td>
+                <td><a href="/admin/interacoes/<%= mov.Id %>">VER</a></td>
+              </tr>
+              <% } %>
+            </tbody>
+          
+          </table> 
+        
+        </div>
+
+
+
+
+
+
+
+  
+  </div>
+</div>
+    <% include partials/footer.ejs %>

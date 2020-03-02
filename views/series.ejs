@@ -1,0 +1,27 @@
+<% include partials/header.ejs %>
+
+<div class="">
+    <div class="row" style="margin-top: 8%;">
+        
+        <div class="col-md-12"><h2>Séries</h2></div>
+
+  <% for (let ser of series) { %>
+
+  
+
+<div class="col-md-3" >
+  <div class="item-movie">
+    <img src="<%= ser.Simage %>" width="100%"/>
+    <div class="title-item">
+      <h5><%= ser.Titulo %></h5>
+      <a class="btn wathbtn" href="/watchserie/<%= ser.Id %>">ASSISTIR</a>
+      <button idtype='2'   inList='0' class="btn wathbtn addFav" typeObj="2" userid="<%= user.Id %>" iditem="<%= ser.Id %>" >Adicionar a lista</button>
+    </div>
+</div>
+
+</div>
+<% } %>
+      
+  </div>
+</div>
+      <% include partials/footer.ejs %>

@@ -1,0 +1,33 @@
+<% include partials/header.ejs %>
+
+<div class="container">
+    <div class="row space-top">
+            <div class="col-md-4 text-center"></div>
+            <div class="col-md-4 text-center">
+<div class="card card-login" style="width: 18rem;">
+    <img src="/img/logo.png" class="card-img-top" alt="Logo do site">
+   <form action="/admin/dologin" method="post" >
+    <ul class="list-group list-group-flush">
+
+       
+    <li class="list-group-item">
+        <label style="color: black;">Login</label>
+        <input class="form-control" name="login">
+    </li>
+    <li class="list-group-item">
+            <label style="color: black;">Senha</label>
+            <input type="password" class="form-control" name="password">
+     </li>
+    </ul>
+    <div class="card-body">
+      <a href="#" style="color: black;" class="card-link">Esqueci a senha/login</a>
+      <input type="submit" name="envia" value="Entrar" id="myBtn" class="btn">
+      
+    </div>
+</form>
+</div>
+<div class="col-md-4 text-center"></div>
+</div>
+</div>
+</div>
+  <% include partials/footer.ejs %>

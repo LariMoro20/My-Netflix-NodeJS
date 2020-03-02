@@ -1,0 +1,20 @@
+<% include partials/header.ejs %>
+<div class="container">
+        <div class="row space-top">
+                <div class="col-md-12">
+                        <% if(interacoes!=''){ %>
+
+                    <h2> <%= interacoes[0].moviesname %></h2>
+                    <img src="<%= interacoes[0].moviesimg %>"style="max-width: 171px;">
+                    <% for (let inte of interacoes) { %>
+                
+                       <p><b><%= inte.title %>:</b> 
+                    <%= inte.username %> [<%= inte.useremail %>] [<%= inte.idDate %>]</p> 
+                       <hr>
+                    <% }}else{ %>
+                        <h2>Não houveram interações ainda para este filme</h2>
+                    <% } %>
+        </div>
+    </div>
+    </div>
+    <% include partials/footer.ejs %>

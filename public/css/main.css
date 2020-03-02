@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+
+*{
+  font-family: 'Ubuntu', sans-serif;
+}
+#menu ul {
+  padding:0px;
+  margin:0px;
+  background-color:#FFF;
+  list-style:none;
+}
+#menu ul li { display: inline; }
+
+h3,h2,h1,h4,h5, label,small, li, ul, ol{
+  color:white;
+}
+.card-title, .card-text{
+  color:black;
+}
+
+
+.episodio-list ul li {
+   display: inline; 
+  }
+
+
+p{
+  color: white;
+}
+
+#menu{
+  display: block;
+position: fixed;
+top: 0;
+z-index: 90000;
+width: 100%;
+background-color: white;
+}
+.bg-light {
+  background-color: 
+  #f8f9fa00 !important;
+}
+.fundohome{
+background-image: url('/img/backg.jpg');
+background-size: cover;
+background-attachment: fixed;
+}
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: 12px;
+    
+}
+#menu ul li a {
+  padding: 1.2rem 1rem;
+  display: inline-block;
+  background-color:#FFF;
+  color: #333;
+  text-decoration: none;
+  border-bottom:3px solid #FFF;
+}
+
+
+#menu ul li a:hover {
+  border-bottom:3px solid #EA0000;
+}
+
+#logo img{
+  width: 7rem;
+}
+
+.caption{
+  position: absolute;
+  top: 24rem;
+  padding: 20px;
+  background-color:#09080891;
+  color: white;
+  height: 100%;
+  width: 100%;
+}
+
+.captlist{
+
+
+position: absolute;
+top: 3rem;
+padding: 20px;
+background-color:
+#09080891;
+color:
+white;
+height: 100%;
+width: 100%;
+font-size: 11px;
+}
+
+
+.captlist h2{
+  font-size: 17px !important;
+}
+
+.captlist .wathbtn{
+  font-size: 13px;
+}
+
+.ilist{
+  max-height: 185px;
+  min-height: 185px;}
+
+
+.captlist .owl-item{
+  max-height: 100px;
+}
+
+.wathbtn{
+border: 2px solidwhite;
+
+background-color:white;
+}
+body {
+  margin-right: 0px;
+  margin-left: 0px;
+  background-color: 
+  #262626;
+}
+.item-movie{
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.item-movie img{
+  width: 100%;
+  min-height: 174px;
+  max-height: 174px;
+  
+}
+
+.title-item{
+position: inherit;
+top: 4em;
+background-color:#00000070;
+width: 100%;
+height: auto;
+color:white;
+padding: 12px;
+}
+.row {
+  margin-right: 0px;
+
+  margin-left: 0px;
+}
+
+
+.space-top{
+  margin-top: 8%;
+}
+
+
+.addbtn{
+  background-color:#1ccc0d;
+  color:white;
+  margin-bottom: 10px;
+}
+
+
+.divfooter{
+justify-content: center;
+display: flex;
+align-content: center;
+flex-wrap: wrap;
+}
+
+
+.owl-prev {
+
+  height: 100px;
+  position: absolute;
+  top: 40%;
+  margin-left: 0;
+  display: block !important;
+  border: 0px solid black;
+
+  z-index: 10000;
+}
+
+.owl-next {
+  
+  height: 100px;
+  position: absolute;
+  top: 40%;
+  right: 0;
+  display: block !important;
+  border: 0px solid black;
+
+  z-index: 300000000000;
+}
+.owl-prev i, .owl-next i {transform : scale(1,6); color: #ccc;}
+
+
+
+.card-login{
+  margin-bottom: 50px;
+
+}
+
+
+
+
+
+
+/* ----------------------- */
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    margin: 0;
+    font-family: Arial;
+    font-size: 17px;
+    height: 100%;
+  }
+  
+  #myVideo {
+      position: fixed; 
+      top: 0px;
+      right: 0; 
+      bottom: 0;
+      min-width: 100%; 
+      min-height: 100%;
+      width: auto; 
+      height: auto; 
+      background: url(images/torre.jpg) no-repeat;
+      background-size: cover; 
+  }
+  
+  .content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  #myBtnBack {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  #myBtn:hover {
+    background: #ddd;
+    color: black;
+  }
+  #myBtnBack:hover {
+    background: #ddd;
+    color: black;
+  }
+
+  .back-screen{
+      position: absolute;
+      height: auto;
+  }
+  video::-webkit-media-controls-panel {
+      opacity: 0px !important;
+      display: absolute;
+      bottom: 0px;
+      height: 80px;
+      margin-top:0%;
+      }
+      #mostra{
+      height: 200px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+
+
+.caption {
+  position: absolute;
+  top: 5rem;
+  padding: 20px;
+  background-color: 
+#09080891;
+color:
+  white;
+  height: 100%;
+  width: 100%;
+  font-size: 11px;
+}
+
+.caption h2{
+  font-size: 14px;
+}
+
+.caption .wathbtn {
+  border: 2px solidwhite;
+  background-color: 
+  white;
+  font-size: 12px;
+}
+}

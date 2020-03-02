@@ -1,0 +1,36 @@
+<% include partials/header.ejs %>
+
+<div class="">
+    <div class="row" style="margin-top: 8%;">
+        
+        <div class="col-md-12"><h2>Filmes</h2></div>
+
+
+  <% for (let ser of movies) {
+    let add='Adicionar a lista';
+
+    for (let int of interacoes) {  
+      if(int.idiserieint==ser.Id){
+        add='Remover da lista';
+      }
+      }
+    
+    
+    %>
+ 
+<div class="col-md-3">
+  <div class="item-movie">
+    <img src="<%= ser.Mimage %>" width="100%"/>
+    <div class="title-item">
+      <h5><%= ser.Mname %></h5>
+      <a class="btn wathbtn" href="watch/<%= ser.Id %>">ASSISTIR</a>
+      <button idtype='2'   inList='0' class="btn wathbtn addFav" typeObj="1" userid="<%= user.Id %>" iditem="<%= ser.Id %>" ><%= add %></button>
+    </div>
+</div>
+
+</div>
+<% } %>
+      
+  </div>
+</div>
+      <% include partials/footer.ejs %>

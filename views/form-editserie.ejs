@@ -1,0 +1,56 @@
+<% include partials/header.ejs %>
+<div class="container">
+        <div class="row space-top">
+                <div class="col-md-12">
+                    <h2>Editar serie</h2>
+            <form action="/admin/edit-serie" method="POST"  enctype='multipart/form-data'>
+                <input type="hidden" class="form-control" name="Id" value="<%= series[0].Id %>">
+
+                <label>Nome</label>
+                <input class="form-control" name="Mname" value="<%= series[0].Titulo %>">
+                <br>
+
+                <label>Gênero</label>
+                <select name="Mgenre" class="form-control">
+                        <option value="<%= series[0].Sgenre %>"><%= series[0].Sgenre %></option>
+                    <option value="Drama">Drama</option>
+                    <option value="Diverso">Diverso</option>
+                    <option value="Ação">Ação</option>
+                    <option value="Comédia">Comédia</option>
+                    <option value="Terror">Terror</option>
+                    <option value="Suspense">Suspense</option>
+                    <option value="Animação">Animação</option>
+                   
+                </select>
+                <br>
+
+
+                <label>Tipo</label>
+                <select name="Mtype" class="form-control">            
+                    <option value="2">Serie</option>
+                </select>
+                <br>
+
+                <label>Descrição</label>
+                <textarea rows="10" class="form-control" name="Mdescription" ><%= series[0].Description %></textarea>
+                <br>
+
+                <label>Imagem URL</label>
+                <input class="form-control" name="Simage" value="<%= series[0].Simage %>">
+                <br>
+                <label>Vídeos</label>
+                <ul>
+                <% for (let eps of episodios) { %>
+                    <li class="removeEpsList"><%= eps.path %> <button  class="deleteEps" ideps="<%= eps.Id %>" idSerie="<%= series[0].Id %>" >X</button></li>
+                <% } %>
+                 </ul>
+                <br>
+                <label>Vídeos</label>
+                <input type="file" class="form-control files" name="files" multiple="">
+
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </div>
+    </div>
+    <% include partials/footer.ejs %>

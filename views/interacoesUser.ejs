@@ -1,0 +1,71 @@
+<% include partials/header.ejs %>
+<div class="">
+                <% if(interacoes!=''){ %>
+        <div class="row space-top">              
+                <div class="col-md-12">
+                        <h2> Minha lista</h2>
+                        <p><%= interacoes[0].descr %></p>
+
+                </div>
+                <div class="col-md-12">
+                        <h3> Filmes</h3>
+                </div>
+               
+                    <% for (let inte of interacoes) { %>
+                
+                        <div class="col-md-3 remove">
+                                <div class="item-movie">
+                                  <img src="<%= inte.moviesimg %>" width="100%"/>
+                                  <div class="title-item">
+                                    <h5><%= inte.moviesname %></h5>
+                                    <a class="btn wathbtn" href="watch/<%= inte.moviesid %>">ASSISTIR</a>
+                                    <button idtype='2' typeObj="1" inList='1' class="btn wathbtn addFav" userid="<%= user.Id %>" iditem="<%= inte.moviesid %>" >Remover da lista</button>
+                                  </div>
+                              </div>
+
+                            </div>
+
+
+                    
+                    <% }
+                 %>
+
+
+
+                <div class="col-md-12">
+                        <hr>
+                        <h3> Séries</h3>
+                </div>
+                <% if(series!=''){ %>
+                    <% for (let ser of series) { %>
+                
+                        <div class="col-md-3 remove">
+                                <div class="item-movie">
+                                  <img src="<%= ser.seriesimg %>" width="100%"/>
+                                  <div class="title-item">
+                                    <h5><%= ser.seriesname %></h5>
+                                    <a class="btn wathbtn" href="watchserie/<%= ser.seriesid %>">ASSISTIR</a>
+                                    <button idtype='2' typeObj="2" inList='1' class="btn wathbtn addFav" userid="<%= user.Id %>" iditem="<%= ser.seriesid %>" >Remover da lista</button>
+                                  </div>
+                              </div>
+
+                            </div>
+
+
+                    
+                            <% }
+                        }}else{ %>
+        
+                                <div class="col-md-12  space-top">
+                                                <h2> Minha lista</h2>
+                                                <p>Nada foi adicionado ainda..</p>
+                                        </div>
+                                <% } %>
+
+
+
+
+               
+    </div>
+    </div>
+    <% include partials/footer.ejs %>

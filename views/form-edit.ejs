@@ -1,0 +1,53 @@
+<% include partials/header.ejs %>
+<div class="container">
+        <div class="row space-top">
+                <div class="col-md-12">
+                    <h2>Editar Filme</h2>
+            <form action="/admin/edit-filme" method="POST">
+                <input type="hidden" class="form-control" name="Id" value="<%= movies[0].Id %>">
+
+                <label>Nome</label>
+                <input class="form-control" name="Mname" value="<%= movies[0].Mname %>">
+                <br>
+
+                <label>Gênero</label>
+                <select name="Mgenre" class="form-control">
+                        <option value="<%= movies[0].Mgenre %>"><%= movies[0].Mgenre %></option>
+                    <option value="Drama">Drama</option>
+                    <option value="Diverso">Diverso</option>
+                    <option value="Ação">Ação</option>
+                    <option value="Comédia">Comédia</option>
+                    <option value="Terror">Terror</option>
+                    <option value="Suspense">Suspense</option>
+                    <option value="Animação">Animação</option>
+                   
+                </select>
+                <br>
+
+
+                <label>Tipo</label>
+                <select name="Mtype" class="form-control">
+                    <option value="<%= movies[0].Mtype %>"><%= movies[0].Title %></option>
+                    <option value="1">Filme</option>
+                    <option value="2">Serie</option>
+                    <option value="3">Documentario</option>
+                </select>
+                <br>
+
+                <label>Descrição</label>
+                <textarea rows="10" class="form-control" name="Mdescription" ><%= movies[0].Mdescription %></textarea>
+                <br>
+
+                <label>Imagem URL</label>
+                <input class="form-control" name="Mimage" value="<%= movies[0].Mimage %>">
+                <br>
+                <label>Vídeo (deixar vazio para manter)</label>
+                <input type="hidden" name="lastvideo" value="<%= movies[0].Mvideo %>">
+                <input class="form-control" type="file" name="file" >
+                <br>
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </div>
+    </div>
+    <% include partials/footer.ejs %>

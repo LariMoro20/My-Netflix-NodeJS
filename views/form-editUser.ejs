@@ -1,0 +1,49 @@
+<% include partials/header.ejs %>
+<div class="container">
+        <div class="row space-top">
+                <div class="col-md-12">
+                    <h2>Editar Perfil</h2>
+                    <p>Para ver as alterações, é necessário logar novamente</p>
+                    <form class="form-signin" action="/edit-user" method="POST" enctype='multipart/form-data'>
+
+                        <div class="form-label-group">
+                          <input type="text" autocomplete="false" id="inputEmail" value="<%= user.name %>" name="UName" class="form-control" placeholder="Nome" required autofocus>
+                          <label for="inputNome">Nome</label>
+                        </div>
+            
+                        <div class="form-label-group">
+                            <input type="text"  autocomplete="false" value="<%= user.cpf %>" name="Ucpf" id="inputEmail"  class="form-control" placeholder="CPF" required autofocus>
+                            <label for="inputCPF">CPF</label>
+                        </div>
+            
+                        <div class="form-label-group">
+                            <input type="text"  autocomplete="false" value="<%= user.email %>" name="UEmail" id="inputEmail"  class="form-control" placeholder="Email" required autofocus>
+                            <label for="inputEmail">Email</label>
+                        </div>
+            
+                        <div class="form-label-group">
+                          <input type="password" autocomplete="false"name="ULogin" class="form-control" placeholder="Senha" >
+                          <label for="inputSenha">Senha(vazio para manter)</label>
+                        </div>
+            
+                        <div class="form-label-group">
+                          <input type="hidden" name="olgimg" value="<%= user.Uimg %>">
+                          <input type="hidden" name="Id" value="<%= user.Id %>">
+
+                            <input type="file" autocomplete="false" name="image" class="form-control" placeholder="Foto de perfil" >
+                            <label for="inputImage">Imagem de perfil(deixar em branco para manter)</label>
+                        </div>
+                  
+                        
+            
+            
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Cadastrar</button>
+                        
+                        
+                        <hr class="my-4">
+                        
+                      </form>
+        </div>
+    </div>
+    </div>
+    <% include partials/footer.ejs %>

@@ -1,0 +1,206 @@
+<footer>
+    <div class="row">
+        <div class="col-md-4 divfooter"><small>Copyright 2019 @ Lari Moro</small></div>
+        <div class="col-md-4 text-center" >
+            <img src="/img/logo.png" width="200px">
+        </div>
+        <div class="col-md-4 divfooter"><small>AlmaFilmes.com.br</small></div>
+    </div>
+</footer>
+
+
+
+
+
+<script src="/plugins/owl.carousel/dist/owl.carousel.min.js"></script>
+<script>
+$('.owl-theme1').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    autoplay:true,
+    navigation: true,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
+    navText : ["<img src='/img/left.png' style='width: 28px;'>","<img  style='width: 28px;' src='/img/right.png'>"],
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+})
+
+
+
+$('.owl-theme2').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    autoplay:false,
+    navigation: true,
+ 
+    navText : ["<img src='/img/left.png' style='width: 28px;'>","<img  style='width: 28px;' src='/img/right.png'>"],
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:4
+        },
+        1000:{
+            items:4
+        }
+    }
+})
+
+
+
+
+function sendAjax(url, data) {
+    $.ajax({
+        url: url,
+        data: data,
+        type: 'POST',
+        dataType: 'json',
+        success: function(data) {
+        },
+        error: function(thrownError) {
+            console.log(thrownError);
+        }
+    });
+}
+
+
+
+
+
+$('body').on('click', '.addFav', function() {
+    object = $(this);
+    user = $(object).attr('userid');
+    identifier = $(object).attr('iditem');
+    inList = $(object).attr('inList');
+    typeObj = $(object).attr('typeObj');
+
+    idtype=$(object).attr('idtype');
+       url = "/addList/"; 
+   
+    
+    sendAjax(url, {
+        'identifier': identifier,
+        'typeObj':typeObj,
+        'user' : user,
+        'idtype':idtype,
+        'inList' :inList
+    });
+    if(object.text('Adicionar a lista +')){
+        object.text('Adicionado');
+        
+        $(object).closest('.remove').remove();
+    }else{
+        object.text('Adicionar a lista +')
+
+    }
+});
+
+
+$('body').on('click', '.deleteEps', function() {
+    object = $(this);
+    ideps = $(object).attr('ideps');
+    idSerie = $(object).attr('idSerie');
+
+    url = "/admin/removeEps";
+    sendAjax(url, {
+        'idSerie': idSerie,
+        'ideps' : ideps,
+    
+    });
+    $(object).closest('.removeEpsList').remove();
+});
+
+
+
+$('body').on('click', '.destakserie', function() {
+    object = $(this);
+    ids = $(object).attr('ids');
+    type = 2;
+    dest = $(object).attr('dest');
+
+    url = "/admin/destak";
+    sendAjax(url, {
+        'type': type,
+        'idm' : ids,
+        'dest' : dest
+
+    });
+
+    if($(object).closest('.destakserie').text()=="Não"){
+        $(object).closest('.destakserie').text('Sim')
+    }else{
+        $(object).closest('.destakserie').text('Não')
+    }
+
+});
+
+
+$('body').on('click', '.destak', function() {
+    object = $(this);
+    idm = $(object).attr('idm');
+    dest = $(object).attr('dest');
+    type = 1;
+
+    url = "/admin/destak";
+    sendAjax(url, {
+        'type': type,
+        'idm' : idm,
+        'dest' : dest
+    });
+    if($(object).closest('.destak').text()=="Não"){
+        $(object).closest('.destak').text('Sim')
+    }else{
+        $(object).closest('.destak').text('Não')
+    }
+    
+});
+
+
+$('body').on('change', '.select-Mtype', function() {
+
+    let opt=$('.select-Mtype option:selected').val();
+     if(opt==2){
+         url='/admin/getSeries';
+         type='2'
+        $.ajax({
+                url: url,
+                data: type,
+                type: 'POST',
+                dataType: 'json',
+                success: function(data) {
+                    $(".serie").append("<li><b>"+data[0]+"</b></li>");  
+                    console.log(data);
+                },
+                error: function(thrownError) {
+                    console.log(thrownError);
+                }
+        });
+        // console.log('Serie');
+     }
+
+ });
+
+
+ $('body').on('change', '.files', function() {
+    if ($(".files")[0].files.length > 10) {
+        alert("Apenas 10 arquivos!");
+    } 
+});
+
+</script>
+
+</body>
+</html>

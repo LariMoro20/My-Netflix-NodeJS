@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MyNetflix</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v5.0&appId=1334124230092311&autoLogAppEvents=1"></script>
+
+</head>
+<body>
+    
+      
+          <% for (let mov of movies) {
+            let pasta =  mov.Mvideo.substring(0, 7);
+            let video =  mov.Mvideo.substring(7);     
+            video=pasta+'/'+video;
+            %>
+         
+
+           
+            <video  id="myVideo" poster="<%= mov.Mimage %>" controls>
+                <source src="/<%= video%>" type="video/mp4" min-width: 100% min-height: 100%">
+                  <source src="/<%=video %>" type="video/x-flv">
+                                  Your browser does not support HTML5 video.
+              </video>
+              <div class="show-content" id="mostra" onmouseover="mostrar(this);" onmouseout="hide()">
+            <div class="content" id="div1" >
+                <h1><%= mov.Mname %></h1>
+                <p><%= mov.Mdescription %></p>
+                <button id="myBtn" onclick="videoFunction()">Play</button>
+                <a href="\" id="myBtnBack" >Voltar á navegação</a>
+                <div class="fb-share-button" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2www.localhost.com%3A3000%2Fwatch%2F<%= mov.Id %>" class="fb-xfbml-parse-ignore">Compartilhar</a></div>
+              </div>
+            
+            </div>
+          <% } %>
+  <script>
+      var video = document.getElementById("myVideo");
+      var btn = document.getElementById("myBtn");
+      
+      function videoFunction() {
+        if (video.paused) {
+          video.play();
+          btn.innerHTML = "Pause";
+        } else {
+          video.pause();
+          btn.innerHTML = "Play";
+        }
+      }
+
+    function mostrar(obj) {
+      document.getElementById('div1').style.display="none";
+
+      switch (obj.id) {
+        case 'mostra':
+        document.getElementById('div1').style.display="block";
+        break
+        
+      }
+    }
+    function hide() {
+          document.getElementById('div1').style.display="none";
+    }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<% include partials/header.ejs %>
+<div class="fundohome">
+    <div class="row space-top">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+    <div class="card card-signin my-5">
+        <div class="card-body">
+          <h5 class="card-title text-center">Entrar</h5>
+          
+                <form class="form-signin" action="/dologin" method="post" >
+            <div class="form-label-group">
+              <input type="text"  autocomplete="false"  name="login" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+              <label for="inputEmail" style="color: black;">Email</label>
+            </div>
+
+            <div class="form-label-group">
+              <input type="password"  name="password" autocomplete="false" id="inputPassword" class="form-control" placeholder="Senha" required>
+              <label for="inputPassword"style="color: black;">Senha</label>
+            </div>
+
+            <div class="custom-control custom-checkbox mb-3">
+              <input type="checkbox" autocomplete="false" class="custom-control-input" id="customCheck1">
+              <label class="custom-control-label" for="customCheck1">Lembrar senha</label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Entrar</button>
+            <hr class="my-4">
+            <a class="btn btn-lg btn-primary btn-block text-uppercase" href="/cadastro">Não tem uma conta? Cadastre-se</a>
+
+          </form>
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+</div>
+</div>
+      <% include partials/footer.ejs %>
+/cadastro

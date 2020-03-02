@@ -1,0 +1,28 @@
+<% include partials/header.ejs %>
+<% 
+let pasta = user.Uimg.substring(0, 7);
+let img = user.Uimg.substring(7);     
+img=pasta+'/'+img;
+%>
+<div class="">
+        
+        <div class="row space-top">
+              
+                <div class="col-md-12">
+                        <h2> Meu perfil</h2>
+                </div>
+               
+                <div class="col-md-8">
+                  <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="<%= img %>" alt="Profile image">
+                    <div class="card-body">
+                      <h5 class="card-title"><%= user.name %></h5>
+                      <p class="card-text">Email: <%= user.email %><br>
+                        CPF: <%= user.cpf %></p>
+                        <a href="/editar-cadastro">Editar perfil</a>
+                    </div>
+                  </div>
+                 </div>
+          </div> 
+  </div>
+    <% include partials/footer.ejs %>

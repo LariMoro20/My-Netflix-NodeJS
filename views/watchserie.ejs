@@ -1,0 +1,28 @@
+<% include partials/header.ejs %>
+    <div class="container episodio-list space-top">
+    <h2>Assistindo <%= series[0].Titulo %></h2>
+    <p>Episódios:</p>
+
+    <ul class="episodio-ul">
+        <% for (let eps of series) { 
+          let pasta = eps.path.substring(0, 7);
+          let video = eps.path.substring(7);     
+          video=pasta+'/'+video;
+         
+          %>
+            <li class="episodio-class">
+
+                <video width="350" controls>
+                    <source src="/<%= video %>" type="video/mp4">
+                  
+                  </video>
+                  </li>
+            
+       
+            <% } %>
+
+         </ul>
+        </div>
+ 
+
+        <% include partials/footer.ejs %>

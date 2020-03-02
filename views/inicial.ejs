@@ -1,0 +1,71 @@
+<% include partials/header.ejs %>
+
+<div class="">
+    <div class="row">
+        
+        <div class="owl-carousel owl-theme1">
+            <% for (let dest of destaques) { %>
+            <div class="item" style="background-image: url(<%= dest.Mimage %>);">
+                <div class="caption">
+                  <h5><%= dest.Mgenre %></h5>
+              <h2><%= dest.Mname %></h2>
+              <p><%= dest.Mdescription %></p>
+              <a class="btn wathbtn" href="watch/<%= dest.Id %>">ASSISTA AGORA</a>
+            </div>
+              <img src="<%= dest.Mimage %>" width="10%"/>
+            </div>
+            <% } %>
+        </div>
+        <div class="col-md-12"><h3>Filmes</h3></div>
+        <div class="owl-carousel owl-theme2">
+              <% for (let mov of movies) {  
+                let add='Adicionar a lista';
+                for (let int of interacoes) {  
+                if(int.idiserieint==mov.Id){
+                  add='Remover da lista';
+                }
+                }
+                %>
+                  <div class="item ilist" style="background-image: url(<%= mov.Mimage %>);">
+                    <div class="caption captlist">
+                      <h2><%= mov.Mname %></h2>
+                      <p><%= mov.Mdescription %></p>
+                      <a class="btn wathbtn" href="watch/<%= mov.Id %>">ASSISTA AGORA</a>
+                      <button idtype='2'   inList='0' class="btn wathbtn addFav" typeObj="1" userid="<%= user.Id %>" iditem="<%= mov.Id %>" ><%= add %></button>
+                    </div>
+                    <img src="<%= mov.Mimage %>" width="10%"/>
+                  </div>
+              <% } %>
+            </div>
+            <div class="col-md-12"><hr><h3>Séries</h3></div>
+
+            <div class="owl-carousel owl-theme2">
+                <% for (let mov of series) {  
+                  let add='Adicionar a lista';
+                  for (let int of interacoes) {  
+                  if(int.idiserieint==mov.Id){
+                    add='Remover da lista';
+                  }
+                  }
+                  %>
+                    <div class="item ilist" style="background-image: url(<%= mov.Simage %>);">
+                      <div class="caption captlist">
+                        <h2><%= mov.Titulo %></h2>
+                        <p><%= mov.Description %></p>
+                        <a class="btn wathbtn" href="watchserie/<%= mov.Id %>">ASSISTA AGORA</a>
+                        <button idtype='2' inList='0' class="btn wathbtn addFav" typeObj="2" userid="<%= user.Id %>" iditem="<%= mov.Id %>" ><%= add %></button>
+                      </div>
+                      <img src="<%= mov.Simage %>" width="10%"/>
+                    </div>
+                <% } %>
+              </div>
+
+
+
+
+
+
+
+      </div>
+</div>
+      <% include partials/footer.ejs %>

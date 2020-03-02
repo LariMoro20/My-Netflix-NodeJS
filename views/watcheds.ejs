@@ -1,0 +1,68 @@
+<% include partials/header.ejs %>
+<div class="">
+        
+        <div class="row space-top">              
+                
+         <% if(interacoes!=''){ %>
+                <div class="col-md-12">
+                        <h2> Assistidos</h2>
+                        <p><%= interacoes[0].descr %></p>
+                </div>
+                <div class="col-md-12">
+                        <h3> Filmes</h3>
+                </div>
+                
+                    <% for (let inte of interacoes) { %>
+                
+                        <div class="col-md-3 remove">
+                                <div class="item-movie">
+                                  <img src="<%= inte.moviesimg %>" width="100%"/>
+                                  <div class="title-item">
+                                    <h5><%= inte.moviesname %></h5>
+                                    <a class="btn wathbtn" href="watch/<%= inte.moviesid %>">ASSISTIR</a>
+                                  </div>
+                              </div>
+
+                            </div>
+
+
+                    
+                    <% }
+                 %>
+
+
+
+                <div class="col-md-12">
+                        <hr>
+                        <h3> Séries</h3>
+                </div>
+                <% if(series!=''){ %>
+                    <% for (let ser of series) { %>
+                
+                        <div class="col-md-3 remove">
+                                <div class="item-movie">
+                                  <img src="<%= ser.seriesimg %>" width="100%"/>
+                                  <div class="title-item">
+                                    <h5><%= ser.seriesname %></h5>
+                                    <a class="btn wathbtn" href="watchserie/<%= ser.seriesid %>">ASSISTIR</a>
+                                  </div>
+                              </div>
+
+                            </div>
+
+
+                    
+                    <% }
+                }}else{ %>
+
+                        <div class="col-md-12">
+                                        <h2> Assistidos</h2>
+                                        <p>Nada foi assistido ainda..</p>
+                                </div>
+                        <% } %>
+
+
+               
+    </div>
+    </div>
+    <% include partials/footer.ejs %>

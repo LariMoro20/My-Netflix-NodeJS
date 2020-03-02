@@ -1,0 +1,54 @@
+<% include partials/header.ejs %>
+<div class="container">
+        <div class="row space-top">
+                <div class="col-md-12">
+                    <h2>Novo Filme</h2>
+            <form action="/admin/novo-filme" method="POST" enctype='multipart/form-data'>
+            
+                <label>Nome</label>
+                <input class="form-control" name="Mname">
+                <br>
+
+                <label>Gênero</label>
+                
+                <select name="Mgenre" class="form-control">
+                    <option value="Drama">Drama</option>
+                    <option value="Diverso">Diverso</option>
+                    <option value="Ação">Ação</option>
+                    <option value="Comédia">Comédia</option>
+                    <option value="Terror">Terror</option>
+                    <option value="Suspense">Suspense</option>
+                    <option value="Animação">Animação</option>
+                   
+                </select>
+                <br>
+
+                
+                <label>Tipo</label>
+                <select name="Mtype" class="form-control select-Mtype">
+                    <option value="1">Filme</option>
+                    <option value="2">Serie</option>
+                    <option value="3">Documentario</option>
+                </select>
+                <br>
+
+                <div class="serie"></div>
+
+                <label>Descrição</label>
+                <textarea rows="10" class="form-control" name="Mdescription"></textarea>
+                <br>
+
+                <label>Imagem URL</label>
+                <input class="form-control" name="Mimage">
+                <br>
+
+                <label>Vídeo</label>
+                <input class="form-control" type="file" name="file">
+                <br>
+
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </div>
+    </div>
+    <% include partials/footer.ejs %>

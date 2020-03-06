@@ -122,7 +122,7 @@ exports.FazCadastro= async(req, res) => {
     var mailer = nodemailer.createTransport(sgTransport(options));
     var email = {
         to: [req.body.UEmail],
-        from: 'atendimento@almafilmes.com',
+        from: 'atendimento@seuserver.com',
         subject: 'Novo cadastro',
         text: 'Olá!'+req.body.UName+'!  Você realizou um novo cadastro em nosso site!',
         html: '<h2>Olá!'+req.body.UName+'<h2>!<b>Seja bem vindo!</b><p>Entre e aproveite nosso catálogo!</p>'

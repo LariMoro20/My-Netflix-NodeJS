@@ -119,8 +119,8 @@ exports.FazCadastro= async(req, res) => {
     user.cpf=req.body.Ucpf;
     user.Uimg=req.file.path;
     await user.salvar();
-    var mailer = nodemailer.createTransport(sgTransport(options));
-    var email = {
+    //var mailer = nodemailer.createTransport(sgTransport(options));
+    /*var email = {
         to: [req.body.UEmail],
         from: 'atendimento@seuserver.com',
         subject: 'Novo cadastro',
@@ -134,7 +134,7 @@ exports.FazCadastro= async(req, res) => {
         }
         console.log(res);
         
-    });
+    });*/
     
     res.redirect('/');
 }

@@ -19,6 +19,6 @@
     "mysql2": "^1.7.0",
     "nodemailer": "^6.4.1",
     "nodemailer-sendgrid-transport": "^0.2.0",
-    "nodemon": "^1.19.3"
+    "nodemon": "^2.0.22"
   }
 }
